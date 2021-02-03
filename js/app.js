@@ -8,17 +8,17 @@ const pluck = (array, key) => {
     }
   })
   return pluckedArray;
-}
+} // map data
 const addContainer = () => {
   app.classList.add('container')
-}
+} // obviously
 
 const displayHeadline = () => {
   const headline = document.createElement('h1')
   headline.classList.add('center')
   headline.innerText = "Course list"
   app.appendChild(headline)
-}
+} // orange header
 
 const displayCourses = () => {
   courses.forEach(course => {
@@ -33,7 +33,7 @@ const displayCourses = () => {
     courseDiv.innerHTML = html
     app.appendChild(courseDiv)
   })
-}
+} // specific course component
 
 const displayUniqueCategories = () => {
   let uniqueCategories = pluck(courses, 'category')
@@ -56,7 +56,7 @@ const hideCourses = (elements, category) => {
     if (course.dataset.cat !== category) { course.style.display = "none"; }
   })
   return null
-}
+} // useEffect
 
 document.addEventListener('DOMContentLoaded', () => {
   addContainer()
